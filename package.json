@@ -1,12 +1,28 @@
 {
 	"name": "sileo-solid",
 	"version": "0.1.0",
-	"description": "An opinionated, physics based toast notification library for solid-js.",
+	"description": "An opinionated, physics-based toast notification library for SolidJS.",
 	"license": "MIT",
+	"author": "Klaus",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/hiaaryan/sileo.git"
+		"url": "git+https://github.com/klaus-2/Sileo-SolidJS.git"
 	},
+	"bugs": {
+		"url": "https://github.com/klaus-2/Sileo-SolidJS/issues"
+	},
+	"homepage": "https://github.com/klaus-2/Sileo-SolidJS#readme",
+	"keywords": [
+		"solid-js",
+		"solidjs",
+		"toast",
+		"notification",
+		"physics",
+		"animation",
+		"motion",
+		"ui",
+		"component"
+	],
 	"exports": {
 		".": {
 			"import": {
@@ -22,22 +38,32 @@
 		"./styles.css": "./dist/styles.css"
 	},
 	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
 	"files": [
 		"dist"
 	],
 	"scripts": {
-		"build": "rm -rf dist && bunchee && cp src/styles.css dist/styles.css",
-		"dev": "bunchee --watch"
+		"build": "rimraf dist && node build.js",
+		"dev": "bunchee --watch",
+		"prepublishOnly": "npm run build",
+		"clean": "rimraf dist"
 	},
 	"peerDependencies": {
 		"solid-js": ">=1.8"
 	},
-	"devDependencies": {
-		"bunchee": "^6.9.4",
-		"solid-js": "^1.9.0"
-	},
 	"dependencies": {
 		"motion": "^12.34.0"
+	},
+	"devDependencies": {
+		"bunchee": "^6.9.4",
+		"rimraf": "^6.0.0",
+		"solid-js": "^1.9.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
