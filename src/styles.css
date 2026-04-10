@@ -64,7 +64,6 @@
 	opacity: 0;
 	transform: translateZ(0) scale(0.95);
 	transform-origin: center;
-	contain: layout style;
 	overflow: visible;
 }
 
@@ -298,7 +297,7 @@
 }
 
 [data-sileo-content]:not([data-visible="true"]) {
-	content-visibility: hidden;
+	visibility: hidden;
 }
 
 [data-sileo-toast][data-ready="true"] [data-sileo-content] {
@@ -330,9 +329,9 @@
 	padding: 1rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
-	contain: layout style paint;
-	content-visibility: auto;
 	color: rgba(0, 0, 0, 0.7);
+	overflow-wrap: break-word;
+	word-break: break-word;
 }
 
 /* --------------------------------- Button --------------------------------- */
@@ -408,7 +407,6 @@
 	padding: 0.75rem;
 	pointer-events: none;
 	max-width: calc(100vw - 1.5rem);
-	contain: layout style;
 }
 
 [data-sileo-viewport][data-position^="top"]
